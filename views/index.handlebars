@@ -1,0 +1,22 @@
+
+	<div id="mainPad">
+
+		<div id="aboutTop" class="about">What to check the value of a stock?</div>
+		<div id="aboutBot" class="about">Add the ticker symbol, click the button and the value will appear.</div>
+
+		<form class="flexColumn" action="/getPrice" method="POST">
+
+			<div class="flexColumn">
+				<label id="forInput" for="tSymbol">Ticker Symbol:</label>
+				<input type="text" id="tSymbol" name="tSymbol" oninput="checkAndUpperCase()" autocomplete="off">
+			</div>
+
+			<input type="submit" id="clickForValue" value="Check on the value">
+
+		</form>
+ 
+		<div id="thePrice" style="visibility: {{query.visible}};">{{query.time}} today, {{query.ticker}} was priced at ${{query.price}}.</div>
+
+	</div>
+
+	<script src="./javascript/mainJS.js"></script>

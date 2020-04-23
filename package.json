@@ -1,0 +1,23 @@
+{
+  "name": "stkquote",
+  "version": "1.0.0",
+  "description": "Get a value of a stock using ticker symbol",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": "12.16.2"
+  },    
+  "author": "David Mollert",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "cheerio": "^1.0.0-rc.3",
+    "express": "^4.17.1",
+    "express-handlebars": "^4.0.3",
+    "node-fetch": "^2.6.0",
+    "path": "^0.12.7"
+  }
+}
