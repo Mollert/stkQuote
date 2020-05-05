@@ -13,6 +13,7 @@ let tie = "?p=";
 let query = {
 	visible: "visible",
 	time: "",
+	company: "",
 	ticker: "",
 	price: ""
 };
@@ -30,6 +31,12 @@ router.post("/", (req, res) => {
 		const $ = cheerio.load(reply);
 //		console.log($('.quote-header-section').find('span').eq(1).text());
 		query.price = $('.quote-header-section').find('span').eq(1).text();
+
+//		console.log($('.quote-header-section').find('h1').text());
+		let transfer = $('.quote-header-section').find('h1').text();
+		let dash = (transfer.search("-")) + 2;
+		query.company = transfer.slice(dash);
+
 //		console.log($('#quote-market-notice').find('span').text());
 		query.time = $('#quote-market-notice').find('span').text();
 		if ((query.time).charAt(1) === "t") {
